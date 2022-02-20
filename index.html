@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>VUE </title>
+</head>
+<body>
+
+<div id="app">
+    <div id="bigbox" class="bigwrap">
+        <h1> Memory Game </h1>
+        <div id="starter_box" v-show="!isStart">
+            Nombre de paire : <input type="number" min="2" max="9" v-model="countCard"/><br/>
+            <button @click="startGame" v-show="!reStart">Start</button>
+        </div>
+        <div v-show="success" class="succes_box">
+            <h3 >Tu as réussi ! </h3>
+            <p v-show="perfect"> Parfait, c'est un sans faute !! Tu as réussi en {{nbCoups}} coups ! Tu es un vrai champion ! </p>
+            <p v-show="good"> Bien !! Tu as réussi en {{nbCoups}} coups !</p>
+            <p v-show="passable"> Pas mal . Tu as réussi en {{nbCoups}} coups .</p>
+            <p v-show="bof">  Tu peux faire mieux !! Tu as réussi en {{nbCoups}} coups</p>
+        </div>
+
+        <div id="game_box" v-show="isStart">
+            <p>Score:  {{score}} / {{countCard}} </p>
+            <p>Nombre de coups : {{nbCoups}} </p>
+            <div id="game">
+                <div v-for="(image,index) in images">
+                    <img style='border-radius : 10px ' v-show="image.open" :src="'https://picsum.photos/id/'+image.id+'/100/150'"/>
+                    <img style='border-radius : 10px ' @click="showCard(index, image.id)"  v-show="!image.open" width="100px" height="150px" src="https://pbs.twimg.com/media/D8PmZJMWkAAY--6.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>  
+<script src="assets/js/main.js"></script>
+</body>
+</html>

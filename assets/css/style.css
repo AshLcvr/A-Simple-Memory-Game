@@ -1,0 +1,66 @@
+body {
+    background: url(https://image.shutterstock.com/image-illustration/dry-ice-smoke-clouds-fog-260nw-1501502936.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: black;
+}
+
+
+
+.bigwrap {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 1080px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+}
+
+#starter_box {
+    margin: 0 auto;
+    display : flex;
+    flex-flow: column nowrap;
+
+}
+
+input{
+    font-size : 2rem;
+    width: 25%;
+    margin: 0 auto;
+}
+
+button:hover {
+    transform:scale(1.2);
+    transition: all .5s;
+
+}
+button {
+    margin: 0 auto;
+    padding : 1rem 3rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.succes_box {
+    text-align: center;
+    color: greenyellow;
+}
+
+
+#game_box {
+    text-align: center;
+}
+
+#game {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5rem;
+}
